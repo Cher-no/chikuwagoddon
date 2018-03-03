@@ -26,6 +26,7 @@ defaults: &defaults
   system_font_ui: false
   noindex: false
   theme: 'default'
+  theme_background: ''
   notification_emails:
     follow: false
     reblog: false

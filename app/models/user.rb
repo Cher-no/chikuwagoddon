@@ -117,6 +117,10 @@ class User < ApplicationRecord
   def setting_theme
     settings.theme
   end
+  
+  def setting_theme_background
+    settings.theme_background
+  end
 
   def token_for_app(a)
     return nil if a.nil? || a.owner != self

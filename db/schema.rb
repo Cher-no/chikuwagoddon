@@ -56,7 +56,12 @@ ActiveRecord::Schema.define(version: 20171010025614) do
     t.string "header_content_type"
     t.integer "header_file_size"
     t.datetime "header_updated_at"
+    t.string "theme_background_file_name"
+    t.string "theme_background_content_type"
+    t.integer "theme_background_file_size"
+    t.datetime "theme_background_updated_at"
     t.string "avatar_remote_url"
+    t.string "theme_background_remote_url"
     t.datetime "subscription_expires_at"
     t.boolean "silenced", default: false, null: false
     t.boolean "suspended", default: false, null: false

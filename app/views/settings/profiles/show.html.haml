@@ -16,6 +16,8 @@
 
     = f.input :header, wrapper: :with_label, input_html: { accept: AccountHeader::IMAGE_MIME_TYPES.join(',') }, hint: t('simple_form.hints.defaults.header')
 
+    = f.input :theme_background, wrapper: :with_label, input_html: { type:'file', accept: AccountThemeBackground::IMAGE_MIME_TYPES.join(',') }
+
   .fields-group
     = f.input :locked, as: :boolean, wrapper: :with_label, hint: t('simple_form.hints.defaults.locked')
 

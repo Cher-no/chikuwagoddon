@@ -49,6 +49,7 @@ class Account < ApplicationRecord
   include AccountAvatar
   include AccountFinderConcern
   include AccountHeader
+  include AccountThemeBackground
   include AccountInteractions
   include Attachmentable
   include Remotable
@@ -163,8 +164,10 @@ class Account < ApplicationRecord
   rescue ActiveRecord::RecordInvalid
     self.avatar              = nil
     self.header              = nil
+    self.theme_background    = nil
     self[:avatar_remote_url] = ''
     self[:header_remote_url] = ''
+    self[:theme_background_remote_url] = ''
     save!
   end
 

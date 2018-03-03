@@ -19,4 +19,5 @@ class REST::ApplicationSerializer < ActiveModel::Serializer
   def website
     object.website.presence
   end
+  
 end

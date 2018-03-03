@@ -11,6 +11,7 @@ ja:
         note: あと<span class="note-counter">%{count}</span>文字入力できます。
         setting_noindex: 公開プロフィールおよび各投稿ページに影響します
         setting_theme: ログインしている全てのデバイスで適用されるデザインです。
+        setting_theme_background: テーマの背景です。現在「星海」でのみ使用できます。
       imports:
         data: 他の Mastodon インスタンスからエクスポートしたCSVファイルを選択して下さい。
       sessions:
@@ -43,6 +44,7 @@ ja:
         setting_reduce_motion: アニメーションの動きを減らす
         setting_system_font_ui: システムのデフォルトフォントを使う
         setting_theme: サイトテーマ
+        setting_theme_background: テーマの背景
         setting_unfollow_modal: フォロー解除する前に確認ダイアログを表示する
         severity: 重大性
         type: インポートする項目
