@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
 class Settings::PreferencesController < ApplicationController
-  include ObfuscateFilename
-
   layout 'admin'
 
   before_action :authenticate_user!
-  #before_action :set_account
-  
-  #obfuscate_filename [:account, :setting_theme_background]
 
   def show; end
 
@@ -44,17 +39,13 @@ class Settings::PreferencesController < ApplicationController
       :setting_boost_modal,
       :setting_delete_modal,
       :setting_auto_play_gif,
+      :setting_display_sensitive_media,
       :setting_reduce_motion,
       :setting_system_font_ui,
       :setting_noindex,
       :setting_theme,
-	  #:setting_theme_background,
       notification_emails: %i(follow follow_request reblog favourite mention digest),
       interactions: %i(must_be_follower must_be_following)
     )
   end
-  
-  #def set_account
-  #  @account = current_user.account
-  #end
 end

@@ -5,7 +5,9 @@ class REST::AccountSerializer < ActiveModel::Serializer
 
   attributes :id, :username, :acct, :display_name, :locked, :created_at,
              :note, :url, :avatar, :avatar_static, :header, :header_static,
-             :followers_count, :following_count, :statuses_count, :theme_background, :theme_background_static
+             :followers_count, :following_count, :statuses_count
+
+  has_one :moved_to_account, key: :moved, serializer: REST::AccountSerializer, if: :moved_and_not_nested?
 
   def id
     object.id.to_s
@@ -34,13 +36,8 @@ class REST::AccountSerializer < ActiveModel::Serializer
   def header_static
     full_asset_url(object.header_static_url)
   end
-  
-  def theme_background
-    full_asset_url(object.theme_background_original_url)
-  end
-  
-  def theme_background_static
-    full_asset_url(object.theme_background_static_url)
-  end
 
+  def moved_and_not_nested?
+    object.moved? && object.moved_to_account.moved_to_account_id.nil?
+  end
 end
